@@ -963,4 +963,4 @@ qemu-system-riscv64    -nographic \
                        -netdev user,id=usernet,hostfwd=tcp:127.0.0.1:10099-:22,hostfwd=tcp:127.0.0.1:11451-:5900
 ```
 28. 进入系统，用户名为 root，密码为 feedme 或 rootme
-29. 启动 anaconda，发现无论是在 text mode 还是使用 ks 文件进行无人值守安装都存在找不到盘的问题，目前还在查找原因
+29. 启动 anaconda，发现无论是在 text mode 还是使用 ks 文件进行无人值守安装都存在找不到盘的问题，后来尝试在安装盘的磁盘后追加一个新的分区，并在ks文件内指定anaconda安装到此分区，但anaconda输出需要unmount当前安装盘才可继续安装，且目前观察下来只要该问题排除后续就理应顺畅，仍在调查问题中
